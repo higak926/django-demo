@@ -87,7 +87,8 @@ load_dotenv()
 DATABASES = {
     'default': dj_database_url.config(
         # デフォルトはローカルのDockerなどのURLを指定しておく
-        default=os.getenv('DATABASE_URL', ""),
+        default=os.getenv(
+            'DATABASE_URL', "postgres://postgres:password@localhost:5432/mydb"),
         conn_max_age=600,
     )
 }
