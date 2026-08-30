@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import JsonResponse
+from core.views import memo_list_api
 
 
 def api_root(request):
@@ -32,4 +33,5 @@ def api_root(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', api_root),
+    path('api/memos/', memo_list_api),
 ]
